@@ -68,12 +68,10 @@ const vpfAboutChinaorEastIndies = (zone) => {
 }
 
 function voyageProfitFactor (voyage, history) {
-  if (aboutChina(voyage.zone, history)) {
-    return vpfAboutChina(vpfAboutChinaorEastIndies(voyage.zone), history, voyage)
-  }
-  else {
-    return vpfNotAboutChina(vpfAboutChinaorEastIndies(voyage.zone), history, voyage)
-  }
+  return aboutChina(voyage.zone, history)?
+  vpfAboutChina(vpfAboutChinaorEastIndies(voyage.zone), history, voyage) 
+  : 
+  vpfNotAboutChina(vpfAboutChinaorEastIndies(voyage.zone), history, voyage)
 }
 
 const compare = (vpf, vr, chr) => {
