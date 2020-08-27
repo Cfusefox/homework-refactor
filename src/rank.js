@@ -61,16 +61,20 @@ const vpfNotAboutChina = (result, history, voyage) => {
   return res
 }
 
-function voyageProfitFactor (voyage, history) {
-  let result = 2;
-  if (voyage.zone === 'china' || voyage.zone === 'east-indies') {
+const vpfAboutChinaorEastIndies = (zone) => {
+  let result = 2
+  if (zone === 'china' || zone === 'east-indies') {
     result += 1;
   }
+  return result
+}
+
+function voyageProfitFactor (voyage, history) {
   if (aboutChina(voyage.zone, history)) {
-    return vpfAboutChina(result, history, voyage)
+    return vpfAboutChina(vpfAboutChinaorEastIndies(voyage.zone), history, voyage)
   }
   else {
-    return vpfNotAboutChina(result, history, voyage)
+    return vpfNotAboutChina(vpfAboutChinaorEastIndies(voyage.zone), history, voyage)
   }
 }
 
