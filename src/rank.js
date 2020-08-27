@@ -78,4 +78,15 @@ module.exports = {
   rating
 };
 
-
+const voyage = {
+  zone: 'west-indies',
+  length: 4,
+};
+const history = [
+  {
+    zone: 'east-indies',
+    profit: 5,
+  }
+];
+const myRating = rating(voyage, history);
+console.log(`myRating: ${myRating}`)
