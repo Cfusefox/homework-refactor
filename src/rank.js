@@ -70,12 +70,6 @@ function rating (voyage, history) {
   const vpf = voyageProfitFactor(voyage, history);
   const vr = voyageRisk(voyage);
   const chr = captainHistoryRisk(voyage, history);
-  if (compare(vpf, vr, chr)) {
-    return 'A';
-  }
-  else {
-    return 'B';
-  }
   return compare(vpf, vr, chr)? 'A' : 'B'
 }
 
