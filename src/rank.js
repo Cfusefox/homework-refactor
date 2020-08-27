@@ -76,6 +76,7 @@ function rating (voyage, history) {
   else {
     return 'B';
   }
+  return compare(vpf, vr, chr)? 'A' : 'B'
 }
 
 module.exports = {
