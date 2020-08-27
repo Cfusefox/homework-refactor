@@ -35,22 +35,28 @@ function captainHistoryRisk (voyage, history) {
   return Math.max(result, 0);
 }
 
+const vpfAboutChina = (result) => {
+  let res = result
+  res += 3;
+  if (history.length > 10) {
+    res += 1;
+  }
+  if (voyage.length > 12) {
+    res += 1;
+  }
+  if (voyage.length > 18) {
+    res -= 1;
+  }
+  return res
+}
+
 function voyageProfitFactor (voyage, history) {
   let result = 2;
   if (voyage.zone === 'china' || voyage.zone === 'east-indies') {
     result += 1;
   }
   if (aboutChina(voyage.zone, history)) {
-    result += 3;
-    if (history.length > 10) {
-      result += 1;
-    }
-    if (voyage.length > 12) {
-      result += 1;
-    }
-    if (voyage.length > 18) {
-      result -= 1;
-    }
+    return vpfAboutChina(result)
   }
   else {
     if (history.length > 8) {
