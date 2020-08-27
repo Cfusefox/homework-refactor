@@ -26,3 +26,16 @@ deliveryTest('delivery test case2', t => {
     const isRush = false
     t.is(deliveryDate(anOrder, isRush), 4)
 })
+
+deliveryTest('delivery test case4', t => {
+    const anOrder = {
+        deliveryState: 'GG',
+        placedOn: {
+            plusDays: (num) => {
+                return num;
+            }
+        }
+    }
+    const isRush = true
+    t.is(deliveryDate(anOrder, isRush), 4)
+})
