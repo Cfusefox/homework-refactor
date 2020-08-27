@@ -4,7 +4,7 @@ function voyageRisk (voyage) {
     result += 2;
   }
   if (voyage.length > 8) {
-    result += voyage.length - 8;
+    result += (voyage.length - 8);
   }
   if ([
     'china',
