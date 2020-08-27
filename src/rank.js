@@ -64,10 +64,7 @@ const compare = (vpf, vr, chr) => {
 }
 
 function rating (voyage, history) {
-  const vpf = voyageProfitFactor(voyage, history);
-  const vr = voyageRisk(voyage);
-  const chr = captainHistoryRisk(voyage, history);
-  return compare(vpf, vr, chr)? 'A' : 'B'
+  return compare(voyageProfitFactor(voyage, history), voyageRisk(voyage), captainHistoryRisk(voyage, history))? 'A' : 'B'
 }
 
 module.exports = {
