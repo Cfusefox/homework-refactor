@@ -10,13 +10,7 @@ const vrLengthCompare = (length) => {
 } 
 
 function voyageRisk (voyage) {
-  if ([
-    'china',
-    'east-indies',
-  ].includes(voyage.zone)) {
-    return vrLengthCompare(voyage.length) + 4;
-  }
-  return vrLengthCompare(voyage.length);
+  return ['china','east-indies',].includes(voyage.zone)? vrLengthCompare(voyage.length) + 4 : vrLengthCompare(voyage.length)
 }
 
 function hasChina (history) {
