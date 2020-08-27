@@ -1,6 +1,5 @@
 const employeeTest = require('ava');
 const { Employee } = require('../src/employee');
-const employee = require('../src/employee');
 
 employeeTest('employee test case1', t => {
     try {
