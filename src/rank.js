@@ -35,7 +35,7 @@ function captainHistoryRisk (voyage, history) {
   return Math.max(result, 0);
 }
 
-const vpfAboutChina = (result) => {
+const vpfAboutChina = (result, history, voyage) => {
   let res = result
   res += 3;
   if (history.length > 10) {
@@ -56,7 +56,7 @@ function voyageProfitFactor (voyage, history) {
     result += 1;
   }
   if (aboutChina(voyage.zone, history)) {
-    return vpfAboutChina(result)
+    return vpfAboutChina(result, history, voyage)
   }
   else {
     if (history.length > 8) {
