@@ -19,13 +19,17 @@ function hasChina (history) {
   return history.some(v => 'china' === v.zone);
 }
 
+const aboutChina = (zone, history) => {
+  return zone === 'china' && hasChina(history)
+}
+
 function captainHistoryRisk (voyage, history) {
   let result = 1;
   if (history.length < 5) {
     result += 4;
   }
   result += history.filter(v => v.profit < 0).length;
-  if (voyage.zone === 'china' && hasChina(history)) {
+  if (aboutChina(voyage.zone, history)) {
     result -= 2;
   }
   return Math.max(result, 0);
@@ -36,7 +40,7 @@ function voyageProfitFactor (voyage, history) {
   if (voyage.zone === 'china' || voyage.zone === 'east-indies') {
     result += 1;
   }
-  if (voyage.zone === 'china' && hasChina(history)) {
+  if (aboutChina(voyage.zone, history)) {
     result += 3;
     if (history.length > 10) {
       result += 1;
