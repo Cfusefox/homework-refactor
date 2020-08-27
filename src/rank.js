@@ -50,6 +50,17 @@ const vpfAboutChina = (result, history, voyage) => {
   return res
 }
 
+const vpfNotAboutChina = (result, history, voyage) => {
+  let res = result
+  if (history.length > 8) {
+    res += 1;
+  }
+  if (voyage.length > 14) {
+    res -= 1;
+  }
+  return res
+}
+
 function voyageProfitFactor (voyage, history) {
   let result = 2;
   if (voyage.zone === 'china' || voyage.zone === 'east-indies') {
@@ -59,14 +70,8 @@ function voyageProfitFactor (voyage, history) {
     return vpfAboutChina(result, history, voyage)
   }
   else {
-    if (history.length > 8) {
-      result += 1;
-    }
-    if (voyage.length > 14) {
-      result -= 1;
-    }
+    return vpfNotAboutChina(result, history, voyage)
   }
-  return result;
 }
 
 const compare = (vpf, vr, chr) => {
