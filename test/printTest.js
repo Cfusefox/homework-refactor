@@ -14,9 +14,9 @@ printTest('print test case1', t => {
         ]
     }
     t.is(`***********************
-    **** Customer Owes ****
-    ***********************
-    name: fox
-    amount: 3
-    amount: ${recodeDueDate()}`, printOwing(invoice))
+  **** Customer Owes ****
+  ***********************
+  name: fox
+  amount: 3
+  amount: ${recodeDueDate()}`, printOwing(invoice))
 })
