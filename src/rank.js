@@ -49,14 +49,13 @@ const vpfAboutChina = (result, history, voyage) => {
 }
 
 const vpfNotAboutChina = (result, history, voyage) => {
-  let res = result
   if (history.length > 8) {
-    res += 1;
+    return result + 1
   }
   if (voyage.length > 14) {
-    res -= 1;
+    return result - 1
   }
-  return res
+  return result
 }
 
 const vpfAboutChinaorEastIndies = (zone) => {
