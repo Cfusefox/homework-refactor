@@ -12,12 +12,12 @@ const recodeDueDate = () => {
 }
 
 function printOwing (invoice) {
-  console.log(`***********************
+  return `***********************
   **** Customer Owes ****
   ***********************
   name: ${invoice.customer}
   amount: ${calOutstanding(invoice.borderSpacing)}
-  amount: ${recodeDueDate.toLocaleDateString()}`)
+  amount: ${recodeDueDate.toLocaleDateString()}`
 }
 
 
