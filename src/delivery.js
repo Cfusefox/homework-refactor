@@ -1,31 +1,23 @@
+const MA = ['MA', 'CT',]
+const NY = ['NY', 'NH',]
+const CT = ['MA', 'CT', 'NY',]
+const ME = ['ME', 'NH']
+
 const inIsRush = (anOrder) => {
-  if ([
-    'MA',
-    'CT',
-  ].includes(anOrder.deliveryState)) {
+  if (MA.includes(anOrder.deliveryState)) {
     return 1
   }
-  if ([
-    'NY',
-    'NH',
-  ].includes(anOrder.deliveryState)) {
+  if (NY.includes(anOrder.deliveryState)) {
     return 2
   }
   return 3
 }
 
 const notInIsRush = (anOrder) => {
-  if ([
-    'MA',
-    'CT',
-    'NY',
-  ].includes(anOrder.deliveryState)) {
+  if (CT.includes(anOrder.deliveryState)) {
     return 2
   }
-  if ([
-    'ME',
-    'NH',
-  ].includes(anOrder.deliveryState)) {
+  if (ME.includes(anOrder.deliveryState)) {
     return  3;
   }
   return 4
