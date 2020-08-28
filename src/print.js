@@ -8,7 +8,7 @@ const calOutstanding = (borderSpacing) => {
 
 const recodeDueDate = () => {
   const today = new Date();
-  return new Date(today.getFullYear(), today.getMonth(), today.getDate() + 30);
+  return new Date(today.getFullYear(), today.getMonth(), today.getDate() + 30).toLocaleDateString();
 }
 
 function printOwing (invoice) {
@@ -17,7 +17,12 @@ function printOwing (invoice) {
   ***********************
   name: ${invoice.customer}
   amount: ${calOutstanding(invoice.borderSpacing)}
-  amount: ${recodeDueDate.toLocaleDateString()}`
+  amount: ${recodeDueDate()}`
+}
+
+module.exports = {
+  printOwing,
+  recodeDueDate
 }
 
 
