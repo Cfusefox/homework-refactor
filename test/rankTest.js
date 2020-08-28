@@ -116,3 +116,25 @@ rankTest('rank test case 6', t => {
   const myRating = rating(voyage, history);
   t.is(`myRating: ${myRating}`, 'myRating: B')
 })
+
+rankTest('rank test case 7', t => {
+  const voyage = {
+    zone: 'china',
+    length: 10,
+  };
+  const history = [
+    {
+      zone: 'east-indies',
+      profit: 5,
+    },{
+      zone: 'west-indies',
+      profit: 15,
+    },
+    {
+      zone: 'west-africa',
+      profit: 7,
+    },
+  ];
+  const myRating = rating(voyage, history);
+  t.is(`myRating: ${myRating}`, 'myRating: B')
+})
