@@ -8,10 +8,10 @@ deliveryTest('delivery test case1', t => {
             plusDays: (num) => {
                 return num;
             }
-        }
+        },
+        isRush: true
     }
-    const isRush = true
-    t.is(deliveryDate(anOrder, isRush), 2)
+    t.is(deliveryDate(anOrder), 2)
 })
 
 deliveryTest('delivery test case2', t => {
@@ -21,10 +21,10 @@ deliveryTest('delivery test case2', t => {
             plusDays: (num) => {
                 return num;
             }
-        }
+        },
+        isRush: false
     }
-    const isRush = false
-    t.is(deliveryDate(anOrder, isRush), 4)
+    t.is(deliveryDate(anOrder), 4)
 })
 
 deliveryTest('delivery test case3', t => {
@@ -34,10 +34,10 @@ deliveryTest('delivery test case3', t => {
             plusDays: (num) => {
                 return num;
             }
-        }
+        },
+        isRush: true
     }
-    const isRush = true
-    t.is(deliveryDate(anOrder, isRush), 4)
+    t.is(deliveryDate(anOrder), 4)
 })
 
 deliveryTest('delivery test case4', t => {
@@ -47,8 +47,8 @@ deliveryTest('delivery test case4', t => {
             plusDays: (num) => {
                 return num;
             }
-        }
+        },
+        isRush: false
     }
-    const isRush = false
-    t.is(deliveryDate(anOrder, isRush), 6)
+    t.is(deliveryDate(anOrder), 6)
 })

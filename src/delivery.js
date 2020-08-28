@@ -31,8 +31,8 @@ const notInIsRush = (anOrder) => {
   return 4
 }
 
-function deliveryDate (anOrder, isRush) {
-  return isRush?anOrder.placedOn.plusDays(1 + inIsRush(anOrder)):anOrder.placedOn.plusDays(2 + notInIsRush(anOrder))
+function deliveryDate (anOrder) {
+  return anOrder.isRush?anOrder.placedOn.plusDays(1 + inIsRush(anOrder)):anOrder.placedOn.plusDays(2 + notInIsRush(anOrder))
 }
 
 module.exports = {
