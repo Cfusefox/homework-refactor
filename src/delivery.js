@@ -1,21 +1,17 @@
 const inIsRush = (anOrder) => {
-  let deliveryTime;
   if ([
     'MA',
     'CT',
   ].includes(anOrder.deliveryState)) {
-    deliveryTime = 1;
+    return 1
   }
-  else if ([
+  if ([
     'NY',
     'NH',
   ].includes(anOrder.deliveryState)) {
-    deliveryTime = 2;
+    return 2
   }
-  else {
-    deliveryTime = 3;
-  }
-  return deliveryTime
+  return 3
 }
 
 const notInIsRush = (anOrder) => {
